@@ -1,0 +1,434 @@
+{
+	"info": {
+		"_postman_id": "f69ca623-b9d8-4d3f-a4de-2b9914442daf",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post new blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\":\"test2@gmail.com\",\n    \"content\":\"test blog content\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blogs"
+					]
+				},
+				"description": "Add a new blog with `author` and `content`. <br/>\nSyntax: `/blogs`"
+			},
+			"response": [
+				{
+					"name": "post new blog",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\":\"test2@gmail.com\",\n    \"content\":\"test blog content\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/blogs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blogs"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 May 2021 18:46:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "blog created"
+				}
+			]
+		},
+		{
+			"name": "Add comment to blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\":\"test@gmail.com\",\n    \"content\":\"this is a test comment4 random id\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/blogs/4EL0V3FW46/comments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blogs",
+						"4EL0V3FW46",
+						"comments",
+						""
+					]
+				},
+				"description": "Add comment to a given blog with `post_id` <br>\nSyntax: `/blog/post_id/`"
+			},
+			"response": [
+				{
+					"name": "Add comment to blog",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\":\"test@gmail.com\",\n    \"content\":\"this is a test comment4 random id\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/blogs/4EL0V3FW46/comments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blogs",
+								"4EL0V3FW46",
+								"comments",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 May 2021 18:47:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "comment created"
+				}
+			]
+		},
+		{
+			"name": "Get all comments for blog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/blogs/4EL0V3FW46/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blogs",
+						"4EL0V3FW46",
+						"comments"
+					]
+				},
+				"description": "Get all comments for the given blog with `post_id` <br>\nSyntax: `/blogs/post_id/comments`"
+			},
+			"response": [
+				{
+					"name": "Get all comments for blog",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/blogs/4EL0V3FW46/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blogs",
+								"4EL0V3FW46",
+								"comments"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 May 2021 18:47:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"comment_id\": \"rey1doAZrT\",\n        \"parent_id\": \"4EL0V3FW46\",\n        \"post_id\": \"4EL0V3FW46\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"this is a test comment random id updated\",\n        \"created_on\": \"2021-05-24T16:04:25.469+00:00\",\n        \"last_modified\": \"2021-05-24T16:26:43.197+00:00\"\n    },\n    {\n        \"comment_id\": \"NGKBGfIXde\",\n        \"parent_id\": \"4EL0V3FW46\",\n        \"post_id\": \"4EL0V3FW46\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"this is a test comment2 random id\",\n        \"created_on\": \"2021-05-24T16:04:37.914+00:00\",\n        \"last_modified\": \"2021-05-24T16:04:37.914+00:00\"\n    },\n    {\n        \"comment_id\": \"4nRiQf5701\",\n        \"parent_id\": \"4EL0V3FW46\",\n        \"post_id\": \"4EL0V3FW46\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"this is a test comment3 random id\",\n        \"created_on\": \"2021-05-24T16:04:41.962+00:00\",\n        \"last_modified\": \"2021-05-24T16:04:41.962+00:00\"\n    },\n    {\n        \"comment_id\": \"2QYN5hRJOI\",\n        \"parent_id\": \"rey1doAZrT\",\n        \"post_id\": \"4EL0V3FW46\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"this is a nested test comment updated\",\n        \"created_on\": \"2021-05-24T16:05:48.703+00:00\",\n        \"last_modified\": \"2021-05-24T16:34:01.429+00:00\"\n    },\n    {\n        \"comment_id\": \"gLpWWw1cjV\",\n        \"parent_id\": \"rey1doAZrT\",\n        \"post_id\": \"4EL0V3FW46\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"this is a nested test comment 2\",\n        \"created_on\": \"2021-05-24T16:06:08.142+00:00\",\n        \"last_modified\": \"2021-05-24T16:06:08.142+00:00\"\n    },\n    {\n        \"comment_id\": \"5RWGKsYEom\",\n        \"parent_id\": \"gLpWWw1cjV\",\n        \"post_id\": \"4EL0V3FW46\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"this is a nested nested test comment 1\",\n        \"created_on\": \"2021-05-24T16:06:47.491+00:00\",\n        \"last_modified\": \"2021-05-24T16:06:47.491+00:00\"\n    },\n    {\n        \"comment_id\": \"VJ4qgaL5Wl\",\n        \"parent_id\": \"4EL0V3FW46\",\n        \"post_id\": \"4EL0V3FW46\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"this is a test comment4 random id\",\n        \"created_on\": \"2021-05-24T18:47:11.072+00:00\",\n        \"last_modified\": \"2021-05-24T18:47:11.072+00:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get all blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blogs"
+					]
+				},
+				"description": "Get All the blogs from the database. <br>\nSyntax: `/blogs`"
+			},
+			"response": [
+				{
+					"name": "Get all blogs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/blogs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blogs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 May 2021 18:48:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"blog1\",\n        \"createdOn\": \"2021-05-24T14:39:26.326+00:00\",\n        \"last_modified\": \"2021-05-24T14:39:26.326+00:00\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"test blog content\"\n    },\n    {\n        \"id\": \"blog2\",\n        \"createdOn\": \"2021-05-24T14:52:55.592+00:00\",\n        \"last_modified\": \"2021-05-24T14:52:55.592+00:00\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"test blog content\"\n    },\n    {\n        \"id\": \"4EL0V3FW46\",\n        \"createdOn\": \"2021-05-24T15:49:35.764+00:00\",\n        \"last_modified\": \"2021-05-24T15:58:04.881+00:00\",\n        \"author\": \"test@gmail.com\",\n        \"content\": \"test blog content updated 2nd time\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update blog",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\": \"test@gmail.com\",\n    \"content\": \"test blog content updated 2nd time\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/blogs/4EL0V3FW46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blogs",
+						"4EL0V3FW46"
+					]
+				},
+				"description": "Update blog with given `post_id` <br>\nSyntax: `/blogs/post_id`"
+			},
+			"response": [
+				{
+					"name": "Update blog",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"test@gmail.com\",\n    \"content\": \"test blog content updated 3rd time\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/blogs/4EL0V3FW46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"blogs",
+								"4EL0V3FW46"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 May 2021 18:48:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "blog updated"
+				}
+			]
+		}
+	]
+}
