@@ -36,6 +36,8 @@ Following services are provided by the REST API:
 
 ## Database Schema
 
+I choose Relational database, because the data was more like in relational fashion. One of the place where I could have used NoSQL database is for storing comments. But I have managed that using Relational database and retrieving using recursive queries. Main reason to choose Relational database is because the schema was fixed and have a proper structure. Relational databases also provide better consistency and integrity. This is my schema:
+
 - USERS
     - email VARCHAR(50) PK
     - password VARCHAR(20)
